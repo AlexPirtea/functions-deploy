@@ -5,6 +5,14 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "make-deploy", "make-deploy\make-deploy.csproj", "{642DBA7C-6A53-4ACB-912E-DDC7751033DC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{596680B3-0DE3-4B2A-A770-984CB4A8000C}"
+	ProjectSection(SolutionItems) = preProject
+		deploy\env = deploy\env
+		deploy\env_template = deploy\env_template
+		Makefile = Makefile
+		deploy\settings = deploy\settings
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

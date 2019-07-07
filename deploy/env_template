@@ -1,0 +1,6 @@
+client_id=<service account client id>
+client_password=<service account client password>
+tenant_id=<service account tenant id>
+resource_group=<resource group name>
+function_name=<function name>
+slot_name=<function slot name>
