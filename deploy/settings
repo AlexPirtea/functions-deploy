@@ -1,2 +1,23 @@
-MySetting3=Hello
-MySetting4=World
+{
+	"settings": {
+		"MySetting3": "get",
+		"MySetting4": "REKT",
+		"MySetting5": "json",
+		"Dictionary": {
+			"default": {
+				"foo": 1234,
+				"bar": "wewee"
+			},
+			"custom": {
+				"foo": 4321,
+				"bar": "asdasd"
+			}
+		},
+		"Array": [
+			"zero",
+			"one",
+			"two",
+			"three"
+		]
+	}
+}

@@ -4,3 +4,4 @@ tenant_id=<service account tenant id>
 resource_group=<resource group name>
 function_name=<function name>
 slot_name=<function slot name>
+settings_key=<json settings key; leave empty or don't specify for root>

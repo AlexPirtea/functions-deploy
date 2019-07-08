@@ -1,9 +1,11 @@
+include deploy/env
 pwd:=$(shell pwd)
 out_folder:=out/
 w_dir=/app
 publish_path:=$(w_dir)/$(out_folder)
 dotnet:=docker run -v $(pwd):$(w_dir) -w $(w_dir) mcr.microsoft.com/dotnet/core/sdk:2.1 dotnet
 az:=docker run -v $(pwd)/:$(w_dir) -w $(w_dir) microsoft/azure-cli az
+jq:=docker run -v $(pwd)/:$(w_dir) -w $(w_dir) -i --entrypoint jq stedolan/jq
 package:=package.zip
 
 publish:
@@ -35,4 +37,4 @@ config:
 		> /dev/null && \
 	az functionapp config appsettings \
 		set -n "$$function_name" -g "$$resource_group" --settings \
-		$$(cat deploy/settings)
+		$$($(jq) --raw-output '.$(settings_key) | tostream | select(length==2) | (.[0] | join("__")) as $$k | .[1] as $$v | "\($$k)=\($$v)"' < deploy/settings)
